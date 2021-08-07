@@ -9,7 +9,6 @@ import os
 
 from aiogram import Bot, Dispatcher, executor, types
 from hashlib import md5
-from json import loads
 
 
 
@@ -23,8 +22,11 @@ DB_NAME = "db_ideas.sqlite3"
 # enter username without '@'
 SUPER_USERS = []
 
-content = loads(open("content.json",encoding="utf-8").read())
-
+content = {
+  "Astart" : "Привет! Я тут играю роль секретаря и записываю все ваши идеи себе в блокнотик. Напииши мне любое сообщение и я передам его своему хозяину.",
+  "start"  : "Привет! Я тут играю роль секретаря и записываю все ваши идеи себе в блокнотик. Напииши мне любое сообщение и я передам его своему хозяину.\nКоличество отправленных сообщений в день ограничено - 5 сообщений",
+  "help"   : "Вот краткая справка по всему:\n⭕️ /start - показать стартовое сообщение\n⭕️ /help - показать эту справку\n⭕️ /show - показать все сообщения\n⭕️ /export - экспортировать сообщения в txt-файл\n⭕️ /clear - очистить БД\n⭕️ /remove - удалить все экспортированные файлы из текущей директории\n⭕️ *Просто сообщение* - закинуть в БД"
+}
 
 # if token wasn't entered
 if not TOKEN:
