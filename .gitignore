@@ -6,3 +6,5 @@
 *.s3db
 *.sl3
 __pycache__
+.env
+list
